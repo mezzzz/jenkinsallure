@@ -16,15 +16,12 @@ import static com.codeborne.selenide.Selenide.*;
 public class MainTest {
 
 
-    @BeforeAll
-    public static void setUp(){
-        Configuration.headless = true;
-    }
 
 
     @Test
     void go()  {
         open("https://www.google.co.uk/");
+        System.out.println("123");
 
 
     }
