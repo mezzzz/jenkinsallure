@@ -1,5 +1,5 @@
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.*;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -11,19 +11,19 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.*;
 
 public class MainTest {
 
 
+    @BeforeAll
+    public static void setUp(){
+        Configuration.headless = true;
+    }
 
 
     @Test
     void go()  {
-        Configuration.remote = "http://localhost:4444/wd/hub/";
-        Configuration.browserCapabilities.setCapability("selenoid:options", getDefaultSelenoideOptions());
-
         open("https://www.google.co.uk/");
 
 
