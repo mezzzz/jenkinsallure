@@ -21,11 +21,8 @@ public class MainTest {
 
     @Test
     void go()  {
-        Configuration.remote = "http://localhost:4444/wd/hub/";
-        Configuration.browserCapabilities.setCapability("selenoid:options", getDefaultSelenoideOptions());
 
         open("https://www.google.co.uk/");
-        sleep(10000);
 
 
     }
