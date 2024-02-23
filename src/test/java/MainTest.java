@@ -1,4 +1,5 @@
 import com.codeborne.selenide.*;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +13,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.*;
-
 public class MainTest {
 
 
@@ -25,8 +25,8 @@ public class MainTest {
     @Test
     void go()  {
         open("https://www.google.co.uk/");
+        $("[aria-invalid=\"false\"]").click();
         System.out.println("x");
-
     }
 
     private Map<String, Object> getDefaultSelenoideOptions() {
